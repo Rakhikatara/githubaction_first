@@ -1,0 +1,23 @@
+
+name: My First GitHub Action
+
+on:
+  push:
+    branches:
+      - main
+
+  workflow_dispatch:
+
+jobs:
+  first-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print Welcome Message
+        run: echo "Hello! My first GitHub Actions workflow"
+
+      - name: Print Current Date
+        run: date
+
+      - name: Print Linux Version
+        run: uname -a
