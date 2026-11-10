@@ -1,0 +1,16 @@
+name: Exercise 6 - Environment Variables
+
+on: workflow_dispatch
+
+jobs:
+  env-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Display Application Details
+        env:
+          APP_NAME: PaymentApp
+          ENVIRONMENT: Development
+        run: |
+          echo "Application: $APP_NAME"
+          echo "Environment: $ENVIRONMENT"
