@@ -1,0 +1,17 @@
+name: Exercise 9 - Artifacts
+
+on: workflow_dispatch
+
+jobs:
+  artifact-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Create File
+        run: echo "My first artifact" > output.txt
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: my-output
+          path: output.txt
