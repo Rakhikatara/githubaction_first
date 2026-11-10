@@ -1,0 +1,20 @@
+
+name: Exercise 1 - Workflow and Events
+
+on:
+  push:
+    branches:
+      - main
+
+  workflow_dispatch:
+
+jobs:
+  first-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Welcome Message
+        run: echo "Welcome to GitHub Actions"
+
+      - name: Print Date
+        run: date
