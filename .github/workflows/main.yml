@@ -1,0 +1,16 @@
+name: Exercise 7 - Conditions
+
+on: workflow_dispatch
+
+jobs:
+  condition-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check Condition
+        if: github.ref == 'refs/heads/main'
+        run: echo "Running on main branch"
+
+      - name: Always Execute
+        if: always()
+        run: echo "This step always executes"
